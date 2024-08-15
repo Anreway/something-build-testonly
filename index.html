@@ -8,7 +8,7 @@
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0;">
     <canvas id="unity-canvas" width=900 height=1600 tabindex="-1" style="width: 900px; height: 1600px; background: #231F20"></canvas>
-    <script src="Build/hamster-hotel-build.loader.js"></script>
+    <script src="Build/something-build-testonly.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
@@ -24,7 +24,6 @@
 
         document.body.style.textAlign = "left";
       }
-
         function sendUserIdToUnity() {
             function checkTelegramWebAppReady() {
                 return new Promise((resolve) => {
@@ -40,23 +39,26 @@
             checkTelegramWebAppReady().then((tg) => {
                 let userId = tg.initDataUnsafe.user.id;
                 let userIdStr = userId.toString();
+                
                 let userUsernameStr = tg.initDataUnsafe.user.username;
+                let userReferalStr = tg.initDataUnsafe.start_param;
                 gameInstance.SendMessage('IDReceiver', 'ReceiveUserId', userIdStr);
                 gameInstance.SendMessage('IDReceiver', 'ReceiveUserUsername', userUsernameStr);
-                
+                gameInstance.SendMessage('IDReceiver', 'ReceiveUserReferal', userUsernameStr);
                 tg.expand();
             });
         }
 
-      // Создаем экземпляр Unity и добавляем callback на инициализацию
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/hamster-hotel-build.data",
-        frameworkUrl: "Build/hamster-hotel-build.framework.js",
-        codeUrl: "Build/hamster-hotel-build.wasm",
+        dataUrl: "Build/something-build-testonly.data",
+        frameworkUrl: "Build/something-build-testonly.framework.js",
+        codeUrl: "Build/something-build-testonly.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "HamsterHotel",
         productVersion: "1.0",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       }).then((unityInstance) => {
         window.gameInstance = unityInstance; // Сохраняем экземпляр Unity
         sendUserIdToUnity(); // Отправляем ID пользователя после загрузки Unity

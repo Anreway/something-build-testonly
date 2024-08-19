@@ -34,9 +34,8 @@
                 
                 let userUsernameStr = tg.initDataUnsafe.user.username;
                 let userReferalStr = tg.initDataUnsafe.start_param;
-                gameInstance.SendMessage('IDReceiver', 'ReceiveUserId', userIdStr);
-                gameInstance.SendMessage('IDReceiver', 'ReceiveUserUsername', userUsernameStr);
-                gameInstance.SendMessage('IDReceiver', 'ReceiveUserReferal', userReferalStr);
+                
+                gameInstance.SendMessage('IDReceiver', 'ReceiveUserInfo', userIdStr, userUsernameStr, userReferalStr);
                 tg.expand();
             });
         }

@@ -29,10 +29,13 @@
 
                 gameInstance.SendMessage('IDReceiver', 'ReceiveUserInfo', combinedData);
                 
-                document.getElementById('loading-screen-02').style.display = 'none';
+                setTimeout(() => {
+                    document.getElementById('loading-screen-02').style.display = 'none';
+                }, 2000);
                 
                 tg.expand();
             });
+
         }
     </script>
     <style>

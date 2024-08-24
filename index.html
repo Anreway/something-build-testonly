@@ -111,9 +111,20 @@
             productVersion: "1.0",
         }).then((unityInstance) => {
             window.gameInstance = unityInstance;
-            document.getElementById('loading-screen-01').style.display = 'none'; // Скрытие первого загрузочного экрана сразу
+            
+            // Убедитесь, что логотип Unity скрыт после загрузки
+            setTimeout(() => {
+                document.getElementById('loading-screen-01').style.display = 'none';
+                document.getElementById('loading-screen-02').style.display = 'none';
+                let unityLogo = document.querySelector('.unity-logo'); // если есть класс или ID у логотипа Unity
+                if (unityLogo) {
+                    unityLogo.style.display = 'none';
+                }
+            }, 2000); // Задержка для перекрытия логотипа Unity
+
             sendUserIdToUnity();
         });
+
     </script>
 </body>
 </html>

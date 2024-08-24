@@ -6,16 +6,6 @@
     <title>Unity WebGL Player | HamsterHotel</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script type="text/javascript">
-       // mergeInto(LibraryManager.library, {
-        //    CopyToClipboard: function(text) {
-        //        navigator.clipboard.writeText(UTF8ToString(text)).then(function() {
-         //           console.log('copied text!');
-         //       }).catch(function(error) {
-         //           console.error('err: ', error);
-         //       });
-         //   }
-      //  });
-
         function sendUserIdToUnity() {
             function checkTelegramWebAppReady() {
                 return new Promise((resolve) => {
@@ -38,6 +28,9 @@
                 let combinedData = userIdStr + ";" + userUsernameStr + ";" + userReferalStr;
 
                 gameInstance.SendMessage('IDReceiver', 'ReceiveUserInfo', combinedData);
+                
+                document.getElementById('loading-screen-02').style.display = 'none';
+                
                 tg.expand();
             });
         }
@@ -82,8 +75,11 @@
     </style>
 </head>
 <body>
-    <div id="loading-screen">
-        <img src="Build/LoadingScreen.png" alt="Loading...">
+    <div id="loading-screen-01">
+        <img src="Build/LoadingScreen_01.png" alt="Loading...">
+    </div>
+    <div id="loading-screen-02">
+        <img src="Build/LoadingScreen_02.png" alt="Loading...">
     </div>
     <canvas id="unity-canvas" tabindex="-1"></canvas>
     <script src="Build/something-build-testonly.loader.js"></script>
@@ -99,7 +95,7 @@
         }).then((unityInstance) => {
             window.gameInstance = unityInstance;
             sendUserIdToUnity();
-            document.getElementById('loading-screen').style.display = 'none'; // Скрыть экран загрузки
+            document.getElementById('loading-screen-01').style.display = 'none';
         });
     </script>
 </body>

@@ -23,9 +23,12 @@
                 let userIdStr = userId.toString();
                 
                 let userUsernameStr = tg.initDataUnsafe.user.username;
+                let userPhotoUrlStr = tg.initDataUnsafe.user.photo_url;
+                
                 let userReferalStr = tg.initDataUnsafe.start_param;
                 
-                let combinedData = userIdStr + ";" + userUsernameStr + ";" + userReferalStr;
+                
+                let combinedData = userIdStr + ";" + userUsernameStr + ";" + userReferalStr + ";" + userPhotoUrlStr;
 
                 gameInstance.SendMessage('IDReceiver', 'ReceiveUserInfo', combinedData);
                 

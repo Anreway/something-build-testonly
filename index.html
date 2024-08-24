@@ -45,7 +45,7 @@
             background-color: #F0C636;
         }
 
-        #loading-screen-01, #loading-screen-02 {
+        #loading-screen-01 {
             width: 100vw;
             height: 100vh;
             position: fixed;
@@ -55,7 +55,20 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 10000; /* Убедитесь, что это значение выше, чем у canvas */
+            z-index: 10000;
+        }
+        
+        #loading-screen-02 {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #F0C636;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
         }
 
         #loading-screen-01 img, #loading-screen-02 img {
@@ -71,7 +84,7 @@
             top: 0;
             left: 0;
             background: #F0C636;
-            z-index: 9999; /* Установите явный z-index для canvas */
+            z-index: 9998;
         }
     </style>
 </head>

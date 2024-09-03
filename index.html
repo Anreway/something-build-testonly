@@ -27,7 +27,7 @@
                 let userReferalStr = tg.initDataUnsafe.start_param;
                 
                 
-                let combinedData = userIdStr + ";" + userUsernameStr + ";" + userReferalStr + ";" + userPhotoUrlStr;
+                let combinedData = userIdStr + ";" + userUsernameStr + ";" + userReferalStr;
                 gameInstance.SendMessage('IDReceiver', 'ReceiveUserInfo', combinedData);
                 
                 setTimeout(() => {

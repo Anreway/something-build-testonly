@@ -80,15 +80,15 @@ html {
   }
 
   25% {
-    transform: translateX(-30%) rotate(-5deg);
+    transform: translateX(-40%) rotate(-5deg);
   }
 
   50% {
-    transform: translateX(30%) rotate(5deg);
+    transform: translateX(40%) rotate(5deg);
   }
 
   75% {
-    transform: translateX(-10%) rotate(0deg);
+    transform: translateX(-20%) rotate(0deg);
   }
 
   100% {

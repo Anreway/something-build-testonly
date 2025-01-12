@@ -28,8 +28,8 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1a1a1a;
-  color: white;
+  background-image: url('TemplateData/Images/solitaire-loading-back.png');
+  background-repeat: repeat;
   font-size: 30px;
   font-family: 'MyCustomFont', sans-serif;
   flex-direction: column;

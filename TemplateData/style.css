@@ -42,6 +42,8 @@ body, html {
     position: relative;
     width: 200px;
     height: 120px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   .card {
@@ -60,8 +62,8 @@ body, html {
   
   @keyframes shuffle {
     0% { transform: translateX(0) rotate(0deg); }
-    25% { transform: translateX(60px) rotate(5deg); }
-    50% { transform: translateX(-60px) rotate(-5deg); }
-    75% { transform: translateX(30px) rotate(3deg); }
+    25% { transform: translateX(30px) rotate(5deg); }
+    50% { transform: translateX(-30px) rotate(-5deg); }
+    75% { transform: translateX(15px) rotate(3deg); }
     100% { transform: translateX(0) rotate(0deg); }
   }

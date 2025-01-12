@@ -7,7 +7,8 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1a1a1a;
+  background-image: url('TemplateData/Images/solitaire-loading-back.png');
+  background-repeat: repeat;
 }
 
 #unity-container,
@@ -53,7 +54,9 @@ html {
   position: absolute;
   width: 80px;
   height: 120px;
-  background-color: white;
+  background-image: url('TemplateData/Images/solitaire-loading-card.png');
+  background-size: cover;
+  background-position: center;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   animation: shuffle 2s infinite;
@@ -80,15 +83,15 @@ html {
   }
 
   25% {
-    transform: translateX(-40%) rotate(-5deg);
+    transform: translateX(-30%) rotate(-5deg);
   }
 
   50% {
-    transform: translateX(40%) rotate(5deg);
+    transform: translateX(30%) rotate(5deg);
   }
 
   75% {
-    transform: translateX(-20%) rotate(0deg);
+    transform: translateX(-10%) rotate(0deg);
   }
 
   100% {

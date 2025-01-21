@@ -7,8 +7,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('solitaire-loading-back.png');
-  background-repeat: repeat;
+  background: radial-gradient(circle, #0e423c 0%, #0c3a34 50%, #062923 100%);
   position: relative;
 }
 
@@ -45,8 +44,7 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('solitaire-loading-back.png');
-  background-repeat: repeat;
+  background: transparent;
   color: white;
   font-size: 30px;
   font-family: 'MyCustomFont', sans-serif;

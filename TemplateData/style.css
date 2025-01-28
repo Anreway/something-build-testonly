@@ -45,16 +45,7 @@ body::after {
   align-items: center;
   justify-content: center;
   background: transparent;
-  color: white;
-  font-size: 30px;
-  font-family: 'Lilita One', sans-serif;
   flex-direction: column;
-}
-
-.loading-text {
-  margin-top: 35px;
-  text-align: center;
-  width: 100%;
 }
 
 .cards-container {
@@ -64,6 +55,17 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.picture-additional-information {
+  position: relative;
+  width: 390px;
+  height: 47px;
+  margin-top: 20px;
+  background-image: url('picture-additional-information.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .card {

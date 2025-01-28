@@ -59,9 +59,9 @@ body::after {
 
 .picture-additional-information {
   position: relative;
-  width: 390px;
+  width: 40%;
   height: 47px;
-  margin-top: 20px;
+  margin: 20px 30% 0 30%;
   background-image: url('picture-additional-information.png');
   background-size: contain;
   background-repeat: no-repeat;

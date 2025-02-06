@@ -68,9 +68,14 @@
 
     window.addEventListener('load', function () 
     {
-      Telegram.WebApp.ready();
-      Telegram.WebApp.expand();
-      Telegram.WebApp.requestFullscreen();
+      if (Telegram.WebApp.platform === "android" || Telegram.WebApp.platform === "ios") {
+          Telegram.WebApp.ready();
+          Telegram.WebApp.expand();
+          Telegram.WebApp.requestFullscreen();
+      }
+      else {
+          Telegram.WebApp.ready();
+      }
 
       Telegram.WebApp.onEvent('viewportChanged', function() {
           if (typeof unityInstance !== 'undefined') {
@@ -81,8 +86,6 @@
               );
           }
       });
-
-      console.log("[GirlsAndRobots] Telegram web app has been expanded to full screen");
     });
   </script>
 </body>
